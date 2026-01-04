@@ -14,6 +14,13 @@ func TestGetAPIKey(t *testing.T) {
 		expectedKey   string
 		expectedError error
 	}{
+		"Intentional failure - expected to fail in CI": {
+			headers: map[string][]string{
+				"Authorization": {"ApiKey real-key"},
+			},
+			expectedKey:   "different-key",
+			expectedError: nil,
+		},
 		"No auth header": {
 			headers:       map[string][]string{},
 			expectedKey:   "",
