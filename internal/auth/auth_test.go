@@ -7,7 +7,6 @@ import (
 	"github.com/bootdotdev/learn-cicd-starter/internal/auth"
 )
 
-
 func TestGetAPIKey(t *testing.T) {
 	tests := map[string]struct {
 		headers       map[string][]string
